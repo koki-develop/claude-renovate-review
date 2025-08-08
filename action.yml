@@ -26,7 +26,6 @@ inputs:
       Newline-separated list of allowed tools for Claude Code.
       Each tool should be on a separate line.
     default: |
-      Bash(gh pr diff:*)
       WebFetch(domain:github.com)
       WebFetch(domain:raw.githubusercontent.com)
     required: false
@@ -87,7 +86,7 @@ runs:
       env:
         ALLOWED_TOOLS: ${{ inputs.allowed-tools }}
       run: |
-        echo "allowed=$(node --eval "console.log(process.env.ALLOWED_TOOLS.trim().split('\n').map(line => line.trim()).join(','))")" >> "$GITHUB_OUTPUT"
+        echo "allowed=$(node --eval "console.log(process.env.ALLOWED_TOOLS.trim().split('\n').map(line => line.trim()).concat('Bash(gh pr diff:*)').join(','))")" >> "$GITHUB_OUTPUT"
 
     - uses: anthropics/claude-code-action/base-action@15db2b3c79c0681556c056e9bc3f61fd3fc0347d # v0.0.54
       id: claude
