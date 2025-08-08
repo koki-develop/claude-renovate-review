@@ -129,8 +129,7 @@ runs:
           ```markdown
           ## Renovate PR Review Results
 
-          ### ⚖️ Safety Assessment:
-          [✅ Safe | ⚠️ Needs Manual Migration | ❌ Not Safe]
+          ### ⚖️ Safety Assessment: [✅ Safe | ⚠️ Needs Manual Migration | ❌ Not Safe]
 
           ### 🔍 Release Content Analysis
           - [Major changes]
