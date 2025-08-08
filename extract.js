@@ -12,9 +12,11 @@ const { report, toolUses, blockedToolUseIds } = logs.reduce(
         // Extract report
         if (
           item.type === "text" &&
-          item.text.startsWith("## Renovate PR Review Results\n")
+          item.text.includes("## Renovate PR Review Results")
         ) {
-          acc.report = item.text.trim();
+          // Extract from "## Renovate PR Review Results" onwards
+          const startIndex = item.text.indexOf("## Renovate PR Review Results");
+          acc.report = item.text.substring(startIndex).trim();
           return acc;
         }
 
