@@ -168,12 +168,21 @@ runs:
         REPORT: ${{ steps.result.outputs.value }}
       run: echo "$REPORT" >> "$GITHUB_STEP_SUMMARY"
 
-    - name: Create Comment
+    - uses: peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e # v3.1.0
       if: ${{ inputs.create-comment == 'true' }}
-      shell: bash
-      env:
-        GITHUB_TOKEN: ${{ inputs.github-token }}
-        REPORT: ${{ steps.result.outputs.value }}
-        PR_NUMBER: ${{ steps.pr-number.outputs.value }}
-      run: |
-        gh pr comment "$PR_NUMBER" --body "$REPORT"
+      id: find-comment
+      with:
+        token: ${{ inputs.github-token }}
+        issue-number: ${{ steps.pr.outputs.number }}
+        body-includes: '<!-- CLAUDE_RENOVATE_REVIEW -->'
+    - uses: peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043 # v4.0.0
+      if: ${{ inputs.create-comment == 'true' }}
+      with:
+        token: ${{ inputs.github-token }}
+        comment-id: ${{ steps.find-comment.outputs.comment-id }}
+        edit-mode: replace
+        issue-number: ${{ steps.pr.outputs.number }}
+        body: |
+          <!-- CLAUDE_RENOVATE_REVIEW -->
+
+          ${{ steps.result.outputs.value }}
