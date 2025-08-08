@@ -1,0 +1,27 @@
+name: Release Please
+
+permissions: {}
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # for create a release
+      pull-requests: write # for open a pull request
+      issues: write # for create labels
+    steps:
+      - uses: googleapis/release-please-action@a02a34c4d625f9be7cb89156071d8567266a2445 # v4.2.0
+        id: release-please
+        with:
+          release-type: simple
+          token: ${{ github.token }}
