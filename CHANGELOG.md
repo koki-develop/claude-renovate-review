@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.0...v1.0.1) (2025-08-08)
+
+
+### Features
+
+* Release ([cf15f9c](https://github.com/koki-develop/claude-renovate-review/commit/cf15f9c841c7b74315e8688242a983af7ce9369d))
+
 ## [1.0.0](https://github.com/koki-develop/claude-renovate-review/compare/v0.1.1...v1.0.0) (2025-08-08)
 
 
