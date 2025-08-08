@@ -158,3 +158,9 @@ runs:
           node "$GITHUB_ACTION_PATH/extract.js"
           echo "$EOF"
         } >> "$GITHUB_OUTPUT"
+
+    - name: Summary
+      shell: bash
+      env:
+        REPORT: ${{ steps.result.outputs.value }}
+      run: echo "$REPORT" >> "$GITHUB_STEP_SUMMARY"
