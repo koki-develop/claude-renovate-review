@@ -1,4 +1,7 @@
 {
   "name": "claude-renovate-review",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
 }
