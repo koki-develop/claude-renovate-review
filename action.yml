@@ -60,7 +60,7 @@ runs:
         PR_NUMBER: ${{ steps.pr-number.outputs.value }}
       shell: bash
       run: |
-        gh pr view "$PR_NUMBER" --json title,body > "$RUNNER_TEMP/pr.json"
+        gh pr view --repo "$GITHUB_REPOSITORY" "$PR_NUMBER" --json title,body > "$RUNNER_TEMP/pr.json"
 
         EOF=$(uuidgen)
         {
