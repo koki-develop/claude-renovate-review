@@ -36,7 +36,7 @@ const { report, toolUses, blockedToolUseIds } = logs.reduce(
           item.content.startsWith("Claude requested permissions to use ") &&
           item.content.endsWith(", but you haven't granted it yet.")
         ) {
-          acc.blockedToolUseIds[item.tool_use_id] = item.content;
+          acc.blockedToolUseIds.push(item.tool_use_id);
           return acc;
         }
       }
@@ -47,7 +47,7 @@ const { report, toolUses, blockedToolUseIds } = logs.reduce(
   {
     report: null,
     toolUses: {},
-    blockedToolUseIds: {},
+    blockedToolUseIds: [],
   }
 );
 
@@ -56,32 +56,35 @@ if (report == null) {
   process.exit(1);
 }
 
-const lines = [
-  report,
-  "",
-  "---",
-  "",
-  "### 🚫 Permission Denied Tool Executions",
-  "",
-  "The following tool executions that Claude Code attempted were blocked due to insufficient permissions.  ",
-  "Consider adding them to `allowed_tools` if needed.",
-  "",
-  "<details>",
-  "<summary>Blocked Tool Executions</summary>",
-  "",
-  "| Tool | Input |",
-  "| --- | --- |",
-];
+const lines = [report];
 
-for (const toolUseId of Object.keys(blockedToolUseIds)) {
-  const toolUse = toolUses[toolUseId];
-  if (toolUse) {
-    lines.push(
-      `| \`${toolUse.name}\` | \`${JSON.stringify(toolUse.input).replace(
-        /\|/g,
-        "\\|"
-      )}\` |`
-    );
+if (blockedToolUseIds.length > 0) {
+  lines.push(
+    "",
+    "---",
+    "",
+    "### 🚫 Permission Denied Tool Executions",
+    "",
+    "The following tool executions that Claude Code attempted were blocked due to insufficient permissions.  ",
+    "Consider adding them to `allowed_tools` if needed.",
+    "",
+    "<details>",
+    "<summary>Blocked Tool Executions</summary>",
+    "",
+    "| Tool | Input |",
+    "| --- | --- |"
+  );
+
+  for (const toolUseId of blockedToolUseIds) {
+    const toolUse = toolUses[toolUseId];
+    if (toolUse) {
+      lines.push(
+        `| \`${toolUse.name}\` | \`${JSON.stringify(toolUse.input).replace(
+          /\|/g,
+          "\\|"
+        )}\` |`
+      );
+    }
   }
 }
 
