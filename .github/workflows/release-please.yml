@@ -38,6 +38,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: koki-develop/major-version-sync@449cf4438e5f4536d5d6161f052b2cd1822e3950 # v1.1.0
+      - uses: koki-develop/major-version-sync@b86eb31aef1c06d81f133799b35ace3c80ebdf0a # v1.2.0
         with:
           version: ${{ needs.release-please.outputs.version }}
