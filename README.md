@@ -5,7 +5,7 @@
 
 Review Renovate PRs using Claude Code.
 
-![](./screenshot.png)
+<img src="./screenshot.png" width="500px" />
 
 ## Usage
 
