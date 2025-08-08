@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.1...v1.0.2) (2025-08-08)
+
+
+### Bug Fixes
+
+* Improve report extraction to handle prefixed text ([c68a41e](https://github.com/koki-develop/claude-renovate-review/commit/c68a41ec100136fd7d7e933fb7e64f344982fd18))
+
 ## [1.0.1](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.0...v1.0.1) (2025-08-08)
 
 
