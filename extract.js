@@ -50,7 +50,7 @@ const { report, toolUses, blockedToolUseIds } = logs.reduce(
     report: null,
     toolUses: {},
     blockedToolUseIds: [],
-  }
+  },
 );
 
 if (report == null) {
@@ -74,7 +74,7 @@ if (blockedToolUseIds.length > 0) {
     "<summary>Blocked Tool Executions</summary>",
     "",
     "| Tool | Input |",
-    "| --- | --- |"
+    "| --- | --- |",
   );
 
   for (const toolUseId of blockedToolUseIds) {
@@ -83,8 +83,8 @@ if (blockedToolUseIds.length > 0) {
       lines.push(
         `| \`${toolUse.name}\` | \`${JSON.stringify(toolUse.input).replace(
           /\|/g,
-          "\\|"
-        )}\` |`
+          "\\|",
+        )}\` |`,
       );
     }
   }

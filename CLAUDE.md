@@ -45,19 +45,24 @@ zizmor .github/workflows/
 ## Key Implementation Details
 
 ### Log Extraction Logic (extract.js)
+
 - Processes Claude Code execution logs from `CLAUDE_CODE_EXECUTION_FILE` environment variable
 - Searches for review reports starting with "## Renovate PR Review Results"
 - Tracks tool uses and identifies blocked tool executions
 - Generates formatted output with blocked tools section when permissions were denied
 
 ### Tool Permissions
+
 Default allowed tools:
+
 - `WebFetch(domain:github.com)`
 - `WebFetch(domain:raw.githubusercontent.com)`
 - `Bash(gh pr diff:*)` (automatically added)
 
 ### Review Report Format
+
 Claude Code generates structured markdown reports with:
+
 - Safety Assessment (Safe/Needs Manual Migration/Not Safe)
 - Release Content Analysis
 - Impact Scope Investigation
@@ -67,6 +72,7 @@ Claude Code generates structured markdown reports with:
 ## Testing Considerations
 
 When testing changes:
+
 - Ensure the action handles missing PR numbers gracefully
 - Verify both authentication methods work (API key and OAuth token)
 - Test comment creation and update functionality

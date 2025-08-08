@@ -12,7 +12,7 @@ inputs:
     required: false
   create-comment:
     description: "Create the review result as a comment on the pull request."
-    default: 'true'
+    default: "true"
     required: false
   pull-request-number:
     description: |
@@ -190,7 +190,7 @@ runs:
       with:
         token: ${{ inputs.github-token }}
         issue-number: ${{ steps.pr.outputs.number }}
-        body-includes: '<!-- CLAUDE_RENOVATE_REVIEW -->'
+        body-includes: "<!-- CLAUDE_RENOVATE_REVIEW -->"
     - uses: peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043 # v4.0.0
       if: ${{ inputs.create-comment == 'true' }}
       with:
