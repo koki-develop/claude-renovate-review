@@ -55,4 +55,4 @@ jobs:
 
 ## License
 
-[MIT](../LICENSE)
+[MIT](./LICENSE)
