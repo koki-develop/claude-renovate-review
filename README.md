@@ -19,7 +19,7 @@ on:
       - edited
 
 jobs:
-  review:
+  claude-renovate-review:
     if: github.event.pull_request.user.login == 'renovate[bot]'
     runs-on: ubuntu-latest
     permissions:
