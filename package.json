@@ -1,6 +1,9 @@
 {
   "name": "claude-renovate-review",
   "private": true,
+  "scripts": {
+    "fmt": "prettier --write ."
+  },
   "devDependencies": {
     "prettier": "3.6.2"
   }
