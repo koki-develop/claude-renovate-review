@@ -1,6 +1,10 @@
 name: Claude Renovate Review
 description: "Review Renovate PRs using Claude Code"
 
+branding:
+  icon: package
+  color: blue
+
 inputs:
   github-token:
     description: "GitHub token with repo and pull request permissions."
