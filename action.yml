@@ -1,4 +1,4 @@
-name: Claude Renovate Review
+name: Claude Renovate Review Action
 description: "Review Renovate PRs using Claude Code"
 
 branding:
