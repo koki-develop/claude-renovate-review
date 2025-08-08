@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://github.com/koki-develop/claude-renovate-review/compare/v0.1.1...v1.0.0) (2025-08-08)
+
+
+### Features
+
+* Improve comment handling to prevent duplicates ([e0155ed](https://github.com/koki-develop/claude-renovate-review/commit/e0155ed793f1e24f3ef7ba17bf0f025c0d9fb876))
+* Release ([da313cc](https://github.com/koki-develop/claude-renovate-review/commit/da313ccbee520e4e322e1b7a8a5de4cab0b3066c))
+* Support newline-separated allowed-tools input ([dae88ae](https://github.com/koki-develop/claude-renovate-review/commit/dae88ae1aed27e2f17f459ef8ca97cd4d456c976))
+
+
+### Bug Fixes
+
+* Add Action Suffix ([5b5830b](https://github.com/koki-develop/claude-renovate-review/commit/5b5830b91e7d5fdd6a0342bc7a2ab8f7fa5c2edf))
+* Change blockedToolUseIds from object to array ([a84b695](https://github.com/koki-develop/claude-renovate-review/commit/a84b695fa63f074abcfbe90e451e2ecf996b3238))
+* Move Bash(gh pr diff:*) from default to hardcoded allowed tools ([2e53565](https://github.com/koki-develop/claude-renovate-review/commit/2e535655c4ab28b05d24d85519a103bbb9e96c5d))
+* Update prompt ([95a01a5](https://github.com/koki-develop/claude-renovate-review/commit/95a01a5775781ab3c160006a5f0078caaa11f9a6))
+
 ## [0.1.1](https://github.com/koki-develop/claude-renovate-review/compare/v0.1.0...v0.1.1) (2025-08-08)
 
 
