@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.3...v1.0.4) (2025-08-16)
+
+
+### Bug Fixes
+
+* Update denied tools action to v1.1.0 and conditionally show report ([b3dc029](https://github.com/koki-develop/claude-renovate-review/commit/b3dc0296b35068a61c0ca73ec5d0ffd50325a5b6))
+
 ## [1.0.3](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.2...v1.0.3) (2025-08-16)
 
 
