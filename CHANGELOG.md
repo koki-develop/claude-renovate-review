@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.4...v1.0.5) (2025-08-16)
+
+
+### Bug Fixes
+
+* Improve report extraction and format instructions ([6af6cbe](https://github.com/koki-develop/claude-renovate-review/commit/6af6cbef0989d91aab9dfe9eff51ad55353f1301))
+
 ## [1.0.4](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.3...v1.0.4) (2025-08-16)
 
 
