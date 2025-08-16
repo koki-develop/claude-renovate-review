@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.2...v1.0.3) (2025-08-16)
+
+
+### Bug Fixes
+
+* Extract denied tools detection to external action ([7c305b8](https://github.com/koki-develop/claude-renovate-review/commit/7c305b8cbc9e036ac7376497fb16ea9d888bc3e7))
+
 ## [1.0.2](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.1...v1.0.2) (2025-08-08)
 
 
