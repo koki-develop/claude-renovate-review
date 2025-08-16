@@ -6,16 +6,16 @@ if (!Array.isArray(logs)) {
 }
 
 const report = (() => {
-  for (const log of logs) {
+  for (const log of logs.reverse()) {
     if (log.type === "assistant" && Array.isArray(log.message?.content)) {
       for (const item of log.message.content) {
         // Extract report
         if (
           item.type === "text" &&
-          item.text.includes("## Renovate PR Review Results")
+          item.text.includes("## Renovate PR")
         ) {
           // Extract from "## Renovate PR Review Results" onwards
-          const startIndex = item.text.indexOf("## Renovate PR Review Results");
+          const startIndex = item.text.indexOf("## Renovate PR");
           return item.text.substring(startIndex).trim();
         }
       }

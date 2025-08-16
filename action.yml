@@ -105,7 +105,7 @@ runs:
 
           Conduct a detailed review of the Renovate Pull Request and evaluate the safety of merging.
 
-          **IMPORTANT**: Do not execute local tests or build commands. This review should be conducted based solely on static analysis of changes, release notes, and impact assessment.
+          **IMPORTANT**: DO NOT execute local tests or build commands. This review should be conducted based solely on static analysis of changes, release notes, and impact assessment.
 
           ### Context
 
@@ -141,6 +141,8 @@ runs:
               - **Not Safe**: Major breaking changes or security risks present
 
           ### Report Format
+
+          **IMPORTANT**: You MUST strictly follow the heading levels in the format below. DO NOT change the heading levels (## for main title, ### for sections).
 
           ```markdown
           ## Renovate PR Review Results
