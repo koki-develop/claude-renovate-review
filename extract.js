@@ -10,10 +10,7 @@ const report = (() => {
     if (log.type === "assistant" && Array.isArray(log.message?.content)) {
       for (const item of log.message.content) {
         // Extract report
-        if (
-          item.type === "text" &&
-          item.text.includes("## Renovate PR")
-        ) {
+        if (item.type === "text" && item.text.includes("## Renovate PR")) {
           // Extract from "## Renovate PR Review Results" onwards
           const startIndex = item.text.indexOf("## Renovate PR");
           return item.text.substring(startIndex).trim();
