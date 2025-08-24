@@ -92,7 +92,7 @@ runs:
       run: |
         echo "allowed=$(node --eval "console.log(process.env.ALLOWED_TOOLS.trim().split('\n').map(line => line.trim()).concat('Bash(gh pr diff:*)').join(','))")" >> "$GITHUB_OUTPUT"
 
-    - uses: anthropics/claude-code-action/base-action@0b138d9d491aac05f09b58c13bcdf46888a7d08c # v0.0.57
+    - uses: anthropics/claude-code-action/base-action@28f83620103c48a57093dcc2837eec89e036bb9f # v0.0.63
       id: claude
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
