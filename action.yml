@@ -92,14 +92,14 @@ runs:
       run: |
         echo "allowed=$(node --eval "console.log(process.env.ALLOWED_TOOLS.trim().split('\n').map(line => line.trim()).concat('Bash(gh pr diff:*)').join(','))")" >> "$GITHUB_OUTPUT"
 
-    - uses: anthropics/claude-code-action/base-action@28f83620103c48a57093dcc2837eec89e036bb9f # v0.0.63
+    - uses: anthropics/claude-code-action/base-action@1b8ee3b94104046d71fde52ec3557651ad8c0d71 # v1.0.29
       id: claude
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
       with:
         anthropic_api_key: ${{ inputs.anthropic-api-key }}
         claude_code_oauth_token: ${{ inputs.claude-code-oauth-token }}
-        allowed_tools: ${{ steps.tools.outputs.allowed }}
+        claude_args: "--allowedTools ${{ steps.tools.outputs.allowed }}"
         prompt: |
           ## Your Role
 
