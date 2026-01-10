@@ -4,8 +4,13 @@
     "report": {
       "type": "string",
       "description": "The complete review report in Markdown format"
+    },
+    "safety_assessment": {
+      "type": "string",
+      "enum": ["safe", "needs-manual-migration", "not-safe"],
+      "description": "Safety assessment result for merging the PR"
     }
   },
-  "required": ["report"],
+  "required": ["report", "safety_assessment"],
   "additionalProperties": false
 }
