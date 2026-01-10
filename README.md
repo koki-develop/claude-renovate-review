@@ -39,9 +39,21 @@ jobs:
         run: echo "Safety Assessment: ${{ steps.review.outputs.safety-assessment }}"
 ```
 
-### Example: Auto-merge safe PRs
+### Using the safety-assessment output
 
-You can use the `safety-assessment` output to automatically merge safe PRs:
+You can use the `safety-assessment` output to automate PR workflows based on the safety level.
+
+#### Auto-approve safe PRs
+
+```yaml
+- name: Auto-approve if safe
+  if: steps.review.outputs.safety-assessment == 'safe'
+  run: gh pr review --approve
+  env:
+    GITHUB_TOKEN: ${{ github.token }}
+```
+
+#### Auto-merge safe PRs
 
 ```yaml
 - name: Auto-merge if safe
