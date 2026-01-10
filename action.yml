@@ -92,6 +92,13 @@ runs:
       run: |
         echo "allowed=$(node --eval "console.log(process.env.ALLOWED_TOOLS.trim().split('\n').map(line => line.trim()).concat('Bash(gh pr diff:*)').join(','))")" >> "$GITHUB_OUTPUT"
 
+    - name: Prepare JSON schema
+      id: schema
+      shell: bash
+      run: |
+        SCHEMA=$(cat "$GITHUB_ACTION_PATH/schema.json" | jq -c .)
+        echo "value=$SCHEMA" >> "$GITHUB_OUTPUT"
+
     - uses: anthropics/claude-code-action/base-action@1b8ee3b94104046d71fde52ec3557651ad8c0d71 # v1.0.29
       id: claude
       env:
@@ -99,7 +106,7 @@ runs:
       with:
         anthropic_api_key: ${{ inputs.anthropic-api-key }}
         claude_code_oauth_token: ${{ inputs.claude-code-oauth-token }}
-        claude_args: "--allowedTools ${{ steps.tools.outputs.allowed }}"
+        claude_args: "--allowedTools ${{ steps.tools.outputs.allowed }} --json-schema '${{ steps.schema.outputs.value }}'"
         prompt: |
           ## Your Role
 
@@ -167,16 +174,18 @@ runs:
           - [CHANGELOG]
           ```
 
+          **IMPORTANT**: Output the report in the `report` field of the JSON schema provided. The report content should be in Markdown format as specified above.
+
     - name: Get Claude Code Result
       shell: bash
       id: result
       env:
-        CLAUDE_CODE_EXECUTION_FILE: ${{ steps.claude.outputs.execution_file }}
+        STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
       run: |
         EOF=$(uuidgen)
         {
           echo "value<<$EOF"
-          node "$GITHUB_ACTION_PATH/extract.js"
+          echo "$STRUCTURED_OUTPUT" | jq -r '.report'
           echo "$EOF"
         } >> "$GITHUB_OUTPUT"
 

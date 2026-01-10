@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "report": {
+      "type": "string",
+      "description": "The complete review report in Markdown format"
+    }
+  },
+  "required": ["report"],
+  "additionalProperties": false
+}
