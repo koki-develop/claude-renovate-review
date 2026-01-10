@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/koki-develop/claude-renovate-review/compare/v1.1.0...v1.1.1) (2026-01-10)
+
+
+### Bug Fixes
+
+* **deps:** update peter-evans/find-comment action to v4 ([#31](https://github.com/koki-develop/claude-renovate-review/issues/31)) ([a4bfbe8](https://github.com/koki-develop/claude-renovate-review/commit/a4bfbe8c4a846ece47d3f43618d70fa592b8bb84))
+
 ## [1.1.0](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.10...v1.1.0) (2026-01-10)
 
 
