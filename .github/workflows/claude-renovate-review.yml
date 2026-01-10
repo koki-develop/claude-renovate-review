@@ -29,7 +29,8 @@ jobs:
         with:
           claude-code-oauth-token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
-      - run: gh pr review --approve
+      - run: gh pr review "$PR_NUMBER" --approve
         if: steps.review.outputs.safety-assessment == 'safe'
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}

@@ -48,9 +48,10 @@ You can use the `safety-assessment` output to automate PR workflows based on the
 ```yaml
 - name: Auto-approve if safe
   if: steps.review.outputs.safety-assessment == 'safe'
-  run: gh pr review --approve
+  run: gh pr review "$PR_NUMBER" --approve
   env:
     GITHUB_TOKEN: ${{ github.token }}
+    PR_NUMBER: ${{ github.event.pull_request.number }}
 ```
 
 #### Auto-merge safe PRs
@@ -58,9 +59,10 @@ You can use the `safety-assessment` output to automate PR workflows based on the
 ```yaml
 - name: Auto-merge if safe
   if: steps.review.outputs.safety-assessment == 'safe'
-  run: gh pr merge --auto
+  run: gh pr merge "$PR_NUMBER" --auto
   env:
     GITHUB_TOKEN: ${{ github.token }}
+    PR_NUMBER: ${{ github.event.pull_request.number }}
 ```
 
 ## Inputs
