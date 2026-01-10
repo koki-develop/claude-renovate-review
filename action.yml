@@ -112,8 +112,6 @@ runs:
 
           Conduct a detailed review of the Renovate Pull Request and evaluate the safety of merging.
 
-          **IMPORTANT**: DO NOT execute local tests or build commands. This review should be conducted based solely on static analysis of changes, release notes, and impact assessment.
-
           ### Context
 
           <pull_request>
