@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.10...v1.1.0) (2026-01-10)
+
+
+### Features
+
+* add safety-assessment output to Claude Renovate Review action ([a4dc620](https://github.com/koki-develop/claude-renovate-review/commit/a4dc620e44d84f30bd503013a41ec3f63c865303))
+
 ## [1.0.10](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.9...v1.0.10) (2026-01-10)
 
 
