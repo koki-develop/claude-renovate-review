@@ -102,7 +102,7 @@ runs:
         SCHEMA=$(cat "$GITHUB_ACTION_PATH/schema.json" | jq -c .)
         echo "value=$SCHEMA" >> "$GITHUB_OUTPUT"
 
-    - uses: anthropics/claude-code-action/base-action@1b8ee3b94104046d71fde52ec3557651ad8c0d71 # v1.0.29
+    - uses: anthropics/claude-code-action/base-action@8341a564b0c1693e9fa29c681852ee3714980098 # v1.0.33
       id: claude
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
