@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/koki-develop/claude-renovate-review/compare/v1.1.0...v1.2.0) (2026-01-25)
+
+
+### Features
+
+* add claude-code-settings input to action.yml ([9a54435](https://github.com/koki-develop/claude-renovate-review/commit/9a54435761d94ed1a03897da9bb24e13439a891b))
+
+
+### Bug Fixes
+
+* **deps:** update peter-evans/create-or-update-comment action to v5 ([#30](https://github.com/koki-develop/claude-renovate-review/issues/30)) ([afa9a58](https://github.com/koki-develop/claude-renovate-review/commit/afa9a58bb2b3320a080dfc2d952895f76c03d877))
+* **deps:** update peter-evans/find-comment action to v4 ([#31](https://github.com/koki-develop/claude-renovate-review/issues/31)) ([a4bfbe8](https://github.com/koki-develop/claude-renovate-review/commit/a4bfbe8c4a846ece47d3f43618d70fa592b8bb84))
+
 ## [1.1.0](https://github.com/koki-develop/claude-renovate-review/compare/v1.0.10...v1.1.0) (2026-01-10)
 
 
