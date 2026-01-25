@@ -33,6 +33,10 @@ inputs:
       WebFetch(domain:github.com)
       WebFetch(domain:raw.githubusercontent.com)
     required: false
+  claude-code-settings:
+    description: "Claude Code settings as JSON string or path to settings JSON file."
+    required: false
+    default: ""
 
 outputs:
   report:
@@ -110,6 +114,7 @@ runs:
         anthropic_api_key: ${{ inputs.anthropic-api-key }}
         claude_code_oauth_token: ${{ inputs.claude-code-oauth-token }}
         claude_args: "--allowedTools ${{ steps.tools.outputs.allowed }} --json-schema '${{ steps.schema.outputs.value }}'"
+        settings: ${{ inputs.claude-code-settings }}
         prompt: |
           ## Your Role
 
