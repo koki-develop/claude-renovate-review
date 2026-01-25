@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/koki-develop/claude-renovate-review/compare/v1.2.0...v1.2.1) (2026-01-25)
+
+
+### Bug Fixes
+
+* **deps:** update anthropics/claude-code-action action to v1.0.33 ([#35](https://github.com/koki-develop/claude-renovate-review/issues/35)) ([1e2dcba](https://github.com/koki-develop/claude-renovate-review/commit/1e2dcba540c579125fa7d50667b86ae1d6fc88aa))
+
 ## [1.2.0](https://github.com/koki-develop/claude-renovate-review/compare/v1.1.0...v1.2.0) (2026-01-25)
 
 
