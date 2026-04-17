@@ -138,9 +138,11 @@ runs:
               - Identify target packages and version changes
 
           2. **Release Content Investigation**
-              - Review release notes and CHANGELOG of the target package
-              - Understand breaking changes, new features, and bug fixes
-              - Check for security-related fixes
+              - Gather as much information as possible about the changes in the target package from all available resources (e.g., release notes, CHANGELOG, migration guides, official documentation, related Issues/Discussions/Pull Requests, source code diff between versions)
+              - Based on the investigation, understand the following:
+                - Breaking changes and new features
+                - Bug fixes and security-related fixes
+                - Required migration steps
 
           3. **Codebase Impact Analysis**
               - Search for usage locations of the target package in the current codebase
@@ -163,21 +165,20 @@ runs:
           ### ⚖️ Safety Assessment: [✅ Safe | ⚠️ Needs Manual Migration | ❌ Not Safe]
 
           ### 🔍 Release Content Analysis
-          - [Major changes]
-          - [Breaking changes]
-          - [Security fixes]
+          - [Breaking changes and new features]
+          - [Bug fixes and security-related fixes]
 
           ### 🎯 Impact Scope Investigation
           - [Usage location identification results]
           - [Impact on other dependencies]
 
           ### 💡 Recommended Actions
+          - [Required migration steps]
           - [Required modification work]
           - [Specific response methods]
 
           ### 🔗 Reference Links
-          - [Release notes]
-          - [CHANGELOG]
+          - [Links to resources referenced during investigation]
           ```
 
           **IMPORTANT**: Output the report in the `report` field and the safety assessment value in the `safety_assessment` field of the JSON schema provided. The report content should be in Markdown format as specified above. The safety_assessment must be exactly one of: "safe", "needs-manual-migration", or "not-safe".
