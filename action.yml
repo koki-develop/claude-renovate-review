@@ -204,7 +204,7 @@ runs:
       run: echo "$REPORT" >> "$GITHUB_STEP_SUMMARY"
     - name: Get denied tools
       id: denied-tools
-      uses: koki-develop/claude-denied-tools@543cd548bd3bd1dd1c3b0be3b96887c8b01725df # v1.1.3
+      uses: koki-develop/claude-denied-tools@8ec14d478d2ab6febe57d23ddf9f7bde69766669 # v1.2.0
       with:
         github-token: ${{ inputs.github-token }}
         claude-code-execution-file: ${{ steps.claude.outputs.execution_file }}
